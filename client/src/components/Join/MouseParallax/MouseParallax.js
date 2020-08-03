@@ -15,9 +15,7 @@ function Card() {
       <animated.div class="card1" style={{ transform: props.xy.interpolate(trans1) }} />
       <animated.div class="card2" style={{ transform: props.xy.interpolate(trans2) }} />
       <animated.div class="card3" style={{ transform: props.xy.interpolate(trans3) }} />
-      <animated.div class="card4" style={{ transform: props.xy.interpolate(trans4) }} >
-          <Card/>
-      </animated.div>
+      <animated.div class="card4" style={{ transform: props.xy.interpolate(trans4) }} />
     </div>
   )
 }

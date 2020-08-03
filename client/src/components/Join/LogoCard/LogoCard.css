@@ -5,7 +5,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  /* background-color: white; */
+  background-color: #36393f;
 }
 
 body {
@@ -21,13 +21,13 @@ body {
   cursor: default;
 }
 
-.center {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* overflow: hidden; */
+/* .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background: #36393f;
-}
+} */
 
 .card {
   /* width: 15ch;
