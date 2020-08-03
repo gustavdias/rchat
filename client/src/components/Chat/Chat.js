@@ -24,7 +24,7 @@ const Chat = ({ location }) => {
 
 
   // const ENDPOINT = "localhost:5000";
-  const ENDPOINT = 'https://super-react-chat.herokuapp.com/';
+  const ENDPOINT = 'https://super-rchat-app.herokuapp.com/';
 
 
   useEffect(() => {
