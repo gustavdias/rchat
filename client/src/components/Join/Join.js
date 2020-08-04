@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
+import { TextField, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
-import logo from "../../icons/apple-touch-icon.png";
 import { Spring } from "react-spring/renderprops";
-import LogoCard from "./LogoCard/LogoCard"
-import MouseParallax from "./MouseParallax/MouseParallax"
+import LogoCard from "./LogoCard/LogoCard";
+import MouseParallax from "./MouseParallax/MouseParallax";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -24,17 +23,17 @@ const InputField = withStyles({
       color: "#7289da",
     },
     "& label": {
-      color: "#b9bbbe",
+      color: "white",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "#b9bbbe",
+        borderColor: "white",
       },
       "&:hover fieldset": {
-        borderColor: "#b9bbbe",
+        borderColor: "white",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "#b9bbbe",
+        borderColor: "white",
       },
     },
   },
@@ -45,79 +44,121 @@ const SignIn = () => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   return (
-    <Box
-      component="div"
-      style={{ background: "#36393F", height: "100vh",  }}
-    >
-      {/* <MouseParallax/> */}
-      <Spring
-        from={{
-          scale: 10,
-          opacity: 0,
-          transform: "scale(0.9)",
-          freq: "0.0175, 0.0",
-        }}
-        to={{
-          scale: 150,
-          opacity: 1,
-          transform: "scale(1)",
-          freq: "0.0, 0.0",
-        }}
-        config={{ duration: 3000 }}
-      >
-        {(props) => (
-          <Grid container justify="center" style={props}>
-            <form name="contact" className={classes.form}>
-              {/* <img
-                src={logo}
-                style={{ height: "30vmin", width: "30vmin" }}
-                alt="logo"
-              /> */}
-<LogoCard style={{ justify: "center"}}/>
-              <br />
-              <InputField
-                fullWidth={true}
-                type="text"
-                name="name"
-                label="Name"
-                variant="outlined"
-                inputProps={{ style: { color: "white" } }}
-                margin="dense"
-                size="medium"
-                onChange={(event) => setName(event.target.value)}
-              ></InputField>
-              <br />
-              <InputField
-                fullWidth={true}
-                type="email"
-                name="email"
-                label="Chat Room Name"
-                variant="outlined"
-                inputProps={{ style: { color: "white" } }}
-                margin="dense"
-                size="medium"
-                onChange={(event) => setRoom(event.target.value)}
-              ></InputField>
+    <Box component="div" style={{ background: "#36393F", height: "100vh" }}>
+      <MouseParallax/>
 
-              <br />
-              <Link
-                onClick={(e) => (!name || !room ? e.preventDefault() : null)}
-                to={`/chat?name=${name}&room=${room}`}
-              >
-                <Button
-                  type="submit"
-                  className={classes.button}
+      <Grid container justify="center">
+        <form name="contact" className={classes.form}>
+          <Spring
+            from={{
+              scale: 10,
+              opacity: 0,
+              freq: "0.0175, 0.0",
+
+              width: 100,
+              padding: 0,
+              transform: "translate3d(400px,0,0) scale(2) rotateX(90deg)",
+              shape: "M20,380 L380,380 L380,380 L200,20 L20,380 Z",
+            }}
+            to={{
+              scale: 150,
+              opacity: 1,
+              freq: "0.0, 0.0",
+
+              width: "auto",
+              transform: "translate3d(0px,0,0) scale(1) rotateX(0deg)",
+              shape: "M20,20 L20,380 L380,380 L380,20 L20,20 Z",
+            }}
+            config={{ duration: 1000 }}
+          >
+            {(props) => (
+              <div style={props}>
+                {" "}
+                <LogoCard />{" "}
+              </div>
+            )}
+          </Spring>
+          <br />
+          <Spring
+            from={{
+              scale: 10,
+              opacity: 0,
+              transform: "scale(0.9)",
+              freq: "0.0175, 0.0",
+            }}
+            to={{
+              scale: 150,
+              opacity: 1,
+              transform: "scale(1)",
+              freq: "0.0, 0.0",
+            }}
+            config={{ duration: 1000 }}
+          >
+            {(props) => (
+              <div style={props}>
+                <InputField
                   fullWidth={true}
+                  type="text"
+                  name="name"
+                  label="Name"
                   variant="outlined"
-                  endIcon={<SendIcon />}
+                  inputProps={{ style: { color: "white" } }}
+                  margin="dense"
+                  size="medium"
+                  onChange={(event) => setName(event.target.value)}
+                ></InputField>
+                <br />
+                <InputField
+                  fullWidth={true}
+                  type="email"
+                  name="email"
+                  label="Chat Room Name"
+                  variant="outlined"
+                  inputProps={{ style: { color: "white" } }}
+                  margin="dense"
+                  size="medium"
+                  onChange={(event) => setRoom(event.target.value)}
+                ></InputField>
+              </div>
+            )}
+          </Spring>
+          <br />
+          <Spring
+            from={{
+              scale: 10,
+              opacity: 0,
+              transform: "scale(0.3)",
+              freq: "0.0175, 0.0",
+            }}
+            to={{
+              scale: 150,
+              opacity: 1,
+              transform: "scale(1)",
+              freq: "0.0, 0.0",
+            }}
+            config={{ duration: 1000 }}
+          >
+            {(props) => (
+              <div style={props}>
+                <Link
+                  onClick={(e) => (!name || !room ? e.preventDefault() : null)}
+                  to={`/chat?name=${name}&room=${room}`}
                 >
-                  JOIN CHAT
-                </Button>
-              </Link>
-            </form>
-          </Grid>
-        )}
-      </Spring>
+                  <Button
+                    type="submit"
+                    className={classes.button}
+                    fullWidth={true}
+                    variant="outlined"
+                    endIcon={<SendIcon />}
+                  >
+                    JOIN CHAT
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </Spring>
+        </form>
+      </Grid>
     </Box>
   );
 };

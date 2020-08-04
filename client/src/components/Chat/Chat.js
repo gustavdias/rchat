@@ -3,7 +3,7 @@ import queryString from "query-string"; //this module helps retrieving data from
 import io from "socket.io-client";
 
 import TextContainer from "../TextContainer/TextContainer";
-import ChatInfo from "../TextContainer/ChatInfo";
+// import ChatInfo from "../TextContainer/ChatInfo";
 import Messages from "../Messages/Messages";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";

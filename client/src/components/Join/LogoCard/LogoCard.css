@@ -36,6 +36,7 @@ body {
   width: 30vmin;
   border-radius: 50%;
   background: #36393f;
+  margin: 0 auto;
   /* border-radius: 5px; */
   background-image: url(../../../icons/apple-touch-icon.png);
   background-size: cover;
@@ -44,6 +45,10 @@ body {
   transition: box-shadow 0.5s;
   will-change: transform;
   /* border: 15px solid white; */
+}
+
+.coin {
+  text-align: center;
 }
 
 .card:hover {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
 import './MouseParallax.css' // // Icons made by Freepik from www.flaticon.com
-import Join from "../Join"
+
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
 const trans2 = (x, y) => `translate3d(${x / 8 + 265}px,${y / 8 - 0}px,0)`
