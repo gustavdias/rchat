@@ -3,11 +3,9 @@ import queryString from "query-string"; //this module helps retrieving data from
 import io from "socket.io-client";
 
 import TextContainer from "../TextContainer/TextContainer";
-// import ChatInfo from "../TextContainer/ChatInfo";
 import Messages from "../Messages/Messages";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
-
 import "./Chat.css";
 
 let socket;
@@ -70,8 +68,9 @@ const Chat = ({ location }) => {
   console.log(message, messages);
   return (
     <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room} />
+      <div className="chatContainer">
+        <InfoBar room={room} users={users}/>
+
         <Messages messages={messages} name={name} />
         <Input
           message={message}

@@ -6,13 +6,30 @@ import closeIcon from '../../icons/closeIcon.png';
 
 import './InfoBar.css';
 
-const InfoBar = ({ room }) => (
+const InfoBar = ({ room, users }) => (
   <div className="infoBar">
     <div className="leftInnerContainer">
       <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-      <h3>{room}</h3>
+      <p>Room: {room}</p>
     </div>
-    <div className="rightInnerContainer">
+
+    {
+      users
+        ? (
+              <div className="centerInnerContainer">
+                {/* <p>People currently chatting:</p> */}
+                {users.map(({name}) => (
+                  <div key={name} className="activeItem">
+                    <img alt="Online Icon" src={onlineIcon}/>
+                    {`${name}`}
+                    
+                  </div>
+                ))}
+              </div>
+        )
+        : null
+    }
+        <div className="rightInnerContainer">
       <a href="/"><img src={closeIcon} alt="close icon" /></a>
     </div>
   </div>
