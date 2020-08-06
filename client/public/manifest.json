@@ -1,6 +1,6 @@
 {
   "short_name": "rChat",
-  "name": "PWA Realtime/React Chat App",
+  "name": "rChat App - PWA Realtime Chat",
   "icons": [
     {
       "src": "./favicon_io/favicon.ico",
