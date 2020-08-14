@@ -1,43 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Button, Grid, Box } from "@material-ui/core";
+import { Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { Spring } from "react-spring/renderprops";
 import LogoCard from "./LogoCard/LogoCard";
 import MouseParallax from "./MouseParallax/MouseParallax";
-
-const useStyles = makeStyles((theme) => ({
-  form: {
-    marginTop: "6rem",
-  },
-  button: {
-    marginTop: "1rem",
-    color: "#7289da",
-    borderColor: "#7289da",
-  },
-}));
-const InputField = withStyles({
-  root: {
-    "& label.Mui-focused": {
-      color: "#7289da",
-    },
-    "& label": {
-      color: "white",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "white",
-      },
-      "&:hover fieldset": {
-        borderColor: "white",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "white",
-      },
-    },
-  },
-})(TextField);
+import useStyles from "./JoinStyles";
+import InputField from "./InputField";
 
 const SignIn = () => {
   const classes = useStyles();
@@ -45,7 +14,7 @@ const SignIn = () => {
   const [room, setRoom] = useState("");
   return (
     <Box component="div" style={{ background: "#36393F", height: "100vh" }}>
-      <MouseParallax/>
+      <MouseParallax />
 
       <Grid container justify="center">
         <form name="contact" className={classes.form}>
