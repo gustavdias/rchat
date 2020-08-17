@@ -1,38 +1,50 @@
 import React from 'react';
 
 import onlineIcon from '../../icons/onlineIcon.png';
-import closeIcon from '../../icons/closeIcon.png';
+// import closeIcon from '../../icons/closeIcon.png';
 // import TextContainer from "../TextContainer/TextContainer";
+import CloseIcon from "@material-ui/icons/Close";
+
 
 import './InfoBar.css';
 
 const InfoBar = ({ room, users }) => (
-  <div className="infoBar">
-    <div className="leftInnerContainer">
-      <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-      <p>Room: {room}</p>
-    </div>
-
-    {
-      users
-        ? (
-              <div className="centerInnerContainer">
-                {/* <p>People currently chatting:</p> */}
-                {users.map(({name}) => (
-                  <div key={name} className="activeItem">
-                    <img alt="Online Icon" src={onlineIcon}/>
-                    {`${name}`}
-                    
-                  </div>
-                ))}
-              </div>
-        )
-        : null
-    }
-        <div className="rightInnerContainer">
-      <a href="/"><img src={closeIcon} alt="close icon" /></a>
-    </div>
+  <div className="infoBarContainer">
+  {/* room: roomName */}
+  <div className="Box-1-leftInnerContainer">
+    <img className="onlineIcon" src={onlineIcon} alt="online icon" />
+    <p>
+      room: 
+      <strong> {room}</strong>
+    </p>
   </div>
+
+  {/* People online */}
+  {users ? (
+    <div className="Box-2-centerInnerContainer">
+      <p>
+<img className="onlineIcon" src={onlineIcon} alt="online icon" />
+      online:
+{users.map(({ name }) => (
+        // <p key={name} className="online">{name} </p>
+     <strong> {name} </strong>
+
+      ))}
+</p>
+      {/* <img alt="Online Icon" src={onlineIcon} /> <p><strong> online: 
+        </strong></p>{" "}
+       */}
+    </div>
+  ) : null}
+
+  {/* Close icon */}
+  <div className="Box-3-rightInnerContainer">
+    <a href="/">
+      {/* <img src={closeIcon} alt="close icon" /> */}
+      <CloseIcon />
+    </a>
+  </div>
+</div>
 );
 
 export default InfoBar;
