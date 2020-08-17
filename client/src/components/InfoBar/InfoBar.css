@@ -6,7 +6,7 @@
   border-radius: 4px 4px 0px 0px;
   min-height: 50px;
   width: 100%;
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 
 .Box-1-leftInnerContainer {
@@ -22,7 +22,7 @@
 .Box-2-centerInnerContainer {
   /* flex: 0.7; */
   width: 68%;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content:left;
 
@@ -30,6 +30,7 @@
   color: #36393F;
   /* background: blue; */
   /* flex-direction:column; */
+  text-transform:capitalize;
 
 }
 
@@ -37,12 +38,13 @@
   display: flex;
   /* flex: 0.1; */
   width: 4%;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   /* margin-right: 2%; */
   /* background: violet */
-  /* align-items: flex-end; */
-  align-self: baseline;
+  align-items: flex-end;
+  /* align-self: baseline; */
   /* border-radius: solid black 1px; */
+  padding-right: 5px;
 }
 
 .onlineIcon {
@@ -55,5 +57,9 @@
 
 .online {
   flex-direction:column;
+
+}
+.visitedGray {
+  color: #36393f;
 
 }
