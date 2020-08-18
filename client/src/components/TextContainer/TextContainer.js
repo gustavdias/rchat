@@ -1,9 +1,6 @@
 import React from "react";
 import onlineIcon from "../../icons/onlineIcon.png";
-
 import "./TextContainer.css";
-// import LogoCard from "../Join/LogoCard/LogoCard";
-// import logo from "../../icons/android-chrome-192x192.png";
 
 const TextContainer = ({ users }) => (
   <div className="textContainer">
@@ -60,7 +57,7 @@ const TextContainer = ({ users }) => (
         <div className="capitalize">
           {users.map(({ name }) => (
             <div key={name} className="activeItem">
-              <img alt="Online Icon" src={onlineIcon} /> {" "} {name}
+              <img alt="Online Icon" src={onlineIcon} /> {name}
             </div>
           ))}
         </div>

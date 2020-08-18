@@ -1,7 +1,5 @@
-import React from 'react';
-
-import './Input.css';
-// const Input = ({ setMessage, sendMessage, message }) => (
+import React from "react";
+import "./Input.css";
 
 const Input = ({ message, setMessage, sendMessage }) => (
   <form className="form">
@@ -10,13 +8,16 @@ const Input = ({ message, setMessage, sendMessage }) => (
       type="text"
       placeholder="Type a message..."
       value={message}
-    //   onChange={({ target: { value } }) => setMessage(value)}
-        onChange={(event) => setMessage(event.target.value)}
-
-      onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+      // onChange={({ target: { value } }) => setMessage(value)}
+      onChange={(event) => setMessage(event.target.value)}
+      onKeyPress={(event) =>
+        event.key === "Enter" ? sendMessage(event) : null
+      }
     />
-    <button className="sendButton" onClick={event => sendMessage(event)}>Send</button>
+    <button className="sendButton" onClick={(event) => sendMessage(event)}>
+      Send
+    </button>
   </form>
-)
+);
 
 export default Input;

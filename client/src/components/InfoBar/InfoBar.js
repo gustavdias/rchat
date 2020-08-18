@@ -1,12 +1,6 @@
 import React from "react";
-
 import onlineIcon from "../../icons/onlineIcon.png";
-// import closeIcon from '../../icons/closeIcon.png';
-// import TextContainer from "../TextContainer/TextContainer";
 import CloseIcon from "@material-ui/icons/Close";
-// import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
-
-
 import "./InfoBar.css";
 
 const InfoBar = ({ room, users }) => (
@@ -22,9 +16,8 @@ const InfoBar = ({ room, users }) => (
 
     {/* People online */}
     <div className="Box-2-centerInnerContainer">
-
-    {users ? (
-        <p>
+      {users ? (
+        <div>
           {/* <img className="onlineIcon" src={onlineIcon} alt="online icon" /> */}
           Online:
           {users.map(({ name }) => (
@@ -35,15 +28,13 @@ const InfoBar = ({ room, users }) => (
               {" | "}
             </strong>
           ))}
-        </p>
-
-    ) : null}
-      </div>
+        </div>
+      ) : null}
+    </div>
 
     {/* Close icon */}
     <div className="Box-3-rightInnerContainer">
       <a href="/">
-        {/* <img src={closeIcon} alt="close icon" /> */}
         <CloseIcon className="visitedGray" />
       </a>
     </div>

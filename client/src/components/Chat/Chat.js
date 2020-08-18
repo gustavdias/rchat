@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import queryString from "query-string"; //this module helps retrieving data from the url
+//this helps retrieving data from the url:
+import queryString from "query-string";
 import io from "socket.io-client";
 
 import TextContainer from "../TextContainer/TextContainer";
@@ -21,10 +22,8 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-
   // const ENDPOINT = "localhost:5000";
-  const ENDPOINT = 'https://super-rchat-app.herokuapp.com/';
-
+  const ENDPOINT = "https://super-rchat-app.herokuapp.com/";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -32,9 +31,9 @@ const Chat = ({ location }) => {
 
     setName(name);
     setRoom(room);
-    
-    socket.emit('join', { name, room }, (error) => {
-      if(error) {
+
+    socket.emit("join", { name, room }, (error) => {
+      if (error) {
         alert(error);
       }
     });
@@ -44,8 +43,7 @@ const Chat = ({ location }) => {
       socket.emit("disconnect");
       socket.off(); //it turns off the chat off socket.emit("join", { name, room },
     };
-  }, [ENDPOINT, location.search]);    //Only when ENDPOINT, location.search changes, that the DOM will update. You can emit events from your client socket side
-
+  }, [ENDPOINT, location.search]); //Only when ENDPOINT, location.search changes, that the DOM will update. You can emit events from your client socket side
 
   useEffect(() => {
     socket.on("message", (message) => {
@@ -60,7 +58,7 @@ const Chat = ({ location }) => {
 
   //function for sending messages
   const sendMessage = (event) => {
-    event.preventDefault(); // prevent default behaviour of of whole page refresh when a keypress or bottom click
+    event.preventDefault(); // prevents default behaviour of of whole page refresh when a keypress or bottom click
     if (message) {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
@@ -69,9 +67,8 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="chatContainer">
-        <div className="iB"> 
-        <InfoBar  room={room} users={users}/>
-
+        <div className="iB">
+          <InfoBar room={room} users={users} />
         </div>
 
         <Messages messages={messages} name={name} />
@@ -82,10 +79,8 @@ const Chat = ({ location }) => {
         />
       </div>
       <TextContainer users={users} />
-      {/* <ChatInfo/> */}
     </div>
   );
 };
-
 
 export default Chat;

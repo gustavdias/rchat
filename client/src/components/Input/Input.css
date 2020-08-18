@@ -3,7 +3,6 @@
   width: 100%;
   border-top: 2px solid #7289da;
   border-radius: 0px 0px 4px 4px;
-
 }
 
 .input {
@@ -13,22 +12,21 @@
   width: 80%;
   font-size: 1.2em;
   border-radius: 0px 0px 4px 4px;
-
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 .sendButton:hover {
-  background-color: yellow;
-  cursor: pointer; 
+  cursor: pointer;
   color: #eaded0 !important;
   background: #5f5b60;
-
 }
 
 .sendButton {
-  color: #36393F !important;
+  color: #36393f !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #7289da;
@@ -37,6 +35,4 @@ input:focus, textarea:focus, select:focus{
   border: none;
   width: 20%;
   border-radius: 0px 0px 4px 0px;
-
-  
 }
