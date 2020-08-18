@@ -69,7 +69,10 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="chatContainer">
-        <InfoBar room={room} users={users}/>
+        <div className="iB"> 
+        <InfoBar  room={room} users={users}/>
+
+        </div>
 
         <Messages messages={messages} name={name} />
         <Input

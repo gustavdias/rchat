@@ -21,25 +21,24 @@ const InfoBar = ({ room, users }) => (
     </div>
 
     {/* People online */}
+    <div className="Box-2-centerInnerContainer">
+
     {users ? (
-      <div className="Box-2-centerInnerContainer">
         <p>
           {/* <img className="onlineIcon" src={onlineIcon} alt="online icon" /> */}
           Online:
           {users.map(({ name }) => (
             // <p key={name} className="online">{name} </p>
-            <strong>
+            <strong key={name}>
               {" "}
               {name}
               {" | "}
             </strong>
           ))}
         </p>
-        {/* <img alt="Online Icon" src={onlineIcon} /> <p><strong> online: 
-        </strong></p>{" "}
-       */}
-      </div>
+
     ) : null}
+      </div>
 
     {/* Close icon */}
     <div className="Box-3-rightInnerContainer">
